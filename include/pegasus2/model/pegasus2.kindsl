@@ -1,0 +1,336 @@
+Robot pegasus2 {
+
+RobotBase torso floating{
+    inertia_params {
+		mass = 18.301807987876099
+		CoM = (-0.001051692818291,-0.000282186110117,0.562333623606978)
+		Ix = 0.043379547480887
+        Iy = 0.099749475439936
+        Iz = 0.110436827483604
+        Ixy = -0.000000118898845
+        Ixz = 0.000016083291643
+        Iyz = 0.000000134886545
+	}
+	children {
+		RF_hip via RF_HAA_joint
+        RH_hip via RH_HAA_joint
+        LH_hip via LH_HAA_joint
+        LF_hip via LF_HAA_joint
+	}
+}
+
+
+// RF leg 
+link RF_hip {
+    id = 1
+    inertia_params {
+        mass = 1.45622
+        CoM = ( 0.00003, -0.02510, -0.00480 ) 
+        Ix = 0.00367451839	
+		Iy = 0.00181643852	
+		Iz = 0.00265623708
+        Ixy = 0.00000193852	
+        Ixz = -0.00000012978
+        Iyz = -0.00000340281
+    }
+    children {
+        RF_upperleg via RF_HFE_joint
+    }
+}
+
+link RF_upperleg {
+    id = 2
+    inertia_params {
+        mass = 1.72052
+        CoM = ( 0.15777, 0.00031, 0.06355 )
+        Ix = 0.01011261660	
+		Iy = 0.10585741735	
+        Iz = 0.09674735484
+        Ixy = 0.00003439098	
+        Ixz = 0.00895614391
+        Iyz = 0.00003269320
+    }
+    children {
+        RF_lowerleg via RF_KFE_joint
+    }
+}
+
+link RF_lowerleg {
+    id = 3
+    inertia_params {
+        mass = 0.35123
+        CoM = ( 0.19252, 0.00186, -0.00113)
+        Ix = 0.000107957
+        Iy = 0.02131287672
+        Iz = 0.02134562462
+        Ixy = 0.00014509186
+        Ixz = -0.00000112179
+        Iyz = -0.00000003231
+    }
+    children {}
+    frames {
+        RF_foot {
+            translation = (0.36120, 0.0, 0.0)
+            rotation = (0.0, 0.0, 0.0)
+        }
+    }
+}
+
+
+// RH leg
+link RH_hip {
+    id = 4
+    inertia_params {
+        mass = 1.45622
+        CoM = ( 0.00003, -0.02510, -0.00480 ) 
+        Ix = 0.00367451839	
+		Iy = 0.00181643852	
+		Iz = 0.00265623708
+        Ixy = 0.00000193852	
+        Ixz = -0.00000012978
+        Iyz = -0.00000340281
+    }
+    children {
+        RH_upperleg via RH_HFE_joint
+    }
+}
+
+link RH_upperleg {
+    id = 5
+    inertia_params {
+        mass = 1.72052
+        CoM = ( 0.15777, 0.00031, 0.06355 )
+        Ix = 0.01011261660	
+		Iy = 0.10585741735	
+        Iz = 0.09674735484
+        Ixy = 0.00003439098	
+        Ixz = 0.00895614391
+        Iyz = 0.00003269320
+    }
+    children {
+        RH_lowerleg via RH_KFE_joint
+    }
+}
+
+link RH_lowerleg {
+    id = 6
+    inertia_params {
+        mass = 0.35123
+        CoM = ( 0.19252, 0.00186, 0.00113)
+        Ix = 0.000107957
+        Iy = 0.02131287672
+        Iz = 0.02134562462
+        Ixy = 0.00014509186
+        Ixz = 0.00000112179
+        Iyz = 0.00000003231
+    }
+    
+    children {}
+    frames {
+        RH_foot {
+            translation = (0.36120, 0.0, 0.0)
+            rotation = (0.0, 0.0, 0.0)
+        }
+    }
+}
+
+
+// LH leg 
+link LH_hip {
+    id = 7
+    inertia_params {
+        mass = 1.45622
+        CoM = ( 0.00003, 0.02510, -0.00480 ) 
+        Ix = 0.00367451839	
+		Iy = 0.00181643852	
+		Iz = 0.00265623708
+        Ixy = -0.00000193852	
+        Ixz = -0.00000012978
+        Iyz = 0.00000340281
+    }
+    children {
+        LH_upperleg via LH_HFE_joint
+    }
+}
+
+link LH_upperleg {
+    id = 8
+    inertia_params {
+        mass = 1.72052
+        CoM = ( 0.15777, 0.00031, -0.06355 )
+        Ix = 0.01011261660	
+		Iy = 0.10585741735	
+        Iz = 0.09674735484
+        Ixy = 0.00003439098	
+        Ixz = -0.00895614391
+        Iyz = -0.00003269320
+    }
+    children {
+        LH_lowerleg via LH_KFE_joint
+    }
+}
+
+
+link LH_lowerleg {
+    id = 9
+    inertia_params {
+        mass = 0.35123
+        CoM = ( 0.19252, 0.00186, -0.00113)
+        Ix = 0.000107957
+        Iy = 0.02131287672
+        Iz = 0.02134562462
+        Ixy = 0.00014509186
+        Ixz = -0.00000112179
+        Iyz = -0.00000003231
+    }
+    children {}
+    frames {
+        LH_foot {
+            translation = (0.36120, 0.0, 0.0)
+            rotation = (0.0, 0.0, 0.0)
+        }
+    }
+}
+
+
+// LF leg
+link LF_hip {
+    id = 10
+    inertia_params {
+        mass = 1.45622
+        CoM = ( 0.00003, 0.02510, -0.00480 ) 
+        Ix = 0.00367451839	
+		Iy = 0.00181643852	
+		Iz = 0.00265623708
+        Ixy = -0.00000193852	
+        Ixz = -0.00000012978
+        Iyz = 0.00000340281
+    }
+    children {
+        LF_upperleg via LF_HFE_joint
+    }
+}
+
+link LF_upperleg {
+    id = 11
+    inertia_params {
+        mass = 1.72052
+        CoM = ( 0.15777, 0.00031, -0.06355 )
+        Ix = 0.01011261660	
+		Iy = 0.10585741735	
+        Iz = 0.09674735484
+        Ixy = 0.00003439098	
+        Ixz = -0.00895614391
+        Iyz = -0.00003269320
+    }
+    children {
+        LF_lowerleg via LF_KFE_joint
+    }
+}
+
+link LF_lowerleg {
+    id = 12
+    inertia_params {
+        mass = 0.35123
+        CoM = ( 0.19252, 0.00186, -0.00113)
+        Ix = 0.000107957
+        Iy = 0.02131287672
+        Iz = 0.02134562462
+        Ixy = 0.00014509186
+        Ixz = -0.00000112179
+        Iyz = -0.00000003231
+    }
+    children {}
+    frames {
+        LF_foot {
+            translation = (0.36120, 0.0, 0.0)
+            rotation = (0.0, 0.0, 0.0)
+        }
+    }
+}
+
+r_joint RF_HAA_joint {
+    ref_frame {
+        translation = (0.370, -0.1185, 0.0)
+        rotation = (0.0, -PI/2.0, 0.0)
+    }
+}
+
+r_joint RF_HFE_joint {
+    ref_frame {
+        translation = (0.0, -0.050, 0.0)
+        rotation = (PI/2.0, 0.0, PI)
+    }
+}
+
+r_joint RF_KFE_joint {
+    ref_frame {
+        translation = (0.380, 0.0, 0.0)
+        rotation = (0.0, 0.0, 0.0)
+    }
+}
+
+r_joint RH_HAA_joint {
+    ref_frame {
+        translation = (-0.370, -0.1185, 0.0)
+        rotation = (0.0, -PI/2.0, 0.0)
+    }
+}
+
+r_joint RH_HFE_joint {
+    ref_frame {
+        translation = (0.0, -0.050, 0.0)
+        rotation = (PI/2.0, 0.0, PI)
+    }
+}
+
+r_joint RH_KFE_joint {
+    ref_frame {
+        translation = (0.380, 0.0, 0.0)
+        rotation = (0.0, 0.0, 0.0)
+    }
+}
+
+r_joint LH_HAA_joint {
+    ref_frame {
+        translation = (-0.370, 0.1185, 0.0)
+        rotation = (0.0, -PI/2.0, 0.0)
+    }
+}
+
+r_joint LH_HFE_joint {
+    ref_frame {
+        translation = (0.0, 0.050, 0.0)
+        rotation = (PI/2.0, 0.0, PI)
+    }
+}
+
+r_joint LH_KFE_joint {
+    ref_frame {
+        translation = (0.380, 0.0, 0.0)
+        rotation = (0.0, 0.0, 0.0)
+    }
+}
+
+r_joint LF_HAA_joint {
+    ref_frame {
+        translation = (0.370, 0.1185, 0.0)
+        rotation = (0.0, -PI/2.0, 0.0)
+    }
+}
+
+r_joint LF_HFE_joint {
+    ref_frame {
+        translation = (0.0, 0.050, 0.0)
+        rotation = (PI/2.0, 0.0, PI)
+    }
+}
+
+r_joint LF_KFE_joint {
+    ref_frame {
+        translation = (0.380, 0.0, 0.0)
+        rotation = (0.0, 0.0, 0.0)
+    }
+}
+
+}

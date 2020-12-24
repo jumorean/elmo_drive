@@ -1,0 +1,8 @@
+#pragma once
+#include <string>
+
+
+static const std::string configDir = "${CMAKE_SOURCE_DIR}/config";
+static const std::string dataDir = "${CMAKE_SOURCE_DIR}/data";
+
+
